@@ -1,4 +1,4 @@
-$document.ready(function (){
+$(function (){
       $("#create_task").change(function() {
                 if ($(this).val() == "Yes") {
                     $("#task_names").show();
