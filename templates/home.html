@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rally Automation</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+<!--    <script src="/javascript.js"></script> -->
+    <script>
+        $(document).ready(function (){
+            $("#create_task").change(function() {
+                if ($(this).val() == "Yes") {
+                    $("#task_names").show();
+                }else{
+                    $("#task_names").hide();
+                }
+            });
+        });
+    </script>
+<style type="text/css">
+body {
+    text-align: center;
+}
+form {
+    display: inline-block;
+}
+</head>
+</style>
+<body>
+<h1> Rally US/Tasks Creaion Automation</h1>
+<h2> Automate your Project User Story and Respective Tasks Creation by just uploading the data here.</h2>
+<form action="/", method = "POST" enctype="multipart/form-data">
+    <p> Enter Rally Username: <br> <input type ="text" name="username" placeholder="abc@yourcompany.com" required/> </p>
+    <p> Rally Workspace: <br> <input name="workspace" type ="text" placeholder="Automation" required/> </p>
+    <p> Rally Project Name: <br> <input name="project" type ="text" placeholder="User Story Automation" required/> </p>
+    <p> Your User Account APIKEY: <br><small> (Generate your User Account API Key from this <a href="https://rally1.rallydev.com/login/accounts/index.html#/keys" target="_blank">link</a>. It takes around 30 mins to get activated.)</small><br> <input type="password" name="api_key" placeholder="_rallyapikey" required/></p>
+    <p> Create User Stroy with Description from file? :
+        <select name="description">
+            <option value = "Yes">Yes</option>
+            <option value = "No" selected>No</option>
+        </select>
+    </p>
+    <p> Create User Stroy along with Tasks? :
+        <select id="create_task" name="create_task">
+            <option value = "Yes">Yes</option>
+            <option value = "No" selected>No</option>
+        </select>
+        <br>
+        <small>(If you select option "Yes", User Stories will be created in Defined as per Rally Functionality. And if "No", as Backlogged.)</small>
+    </p>
+ <!--   <p id="task_number" name="task_number" style="display:none;">Select Number of Tasks to be created for respective User Story? :
+        <select>
+            <option value = "1">1</option>
+            <option value = "2">2</option>
+            <option value = "3">3</option>
+            <option value = "4">4</option>
+            <option value = "5">5</option>
+            <option value = "6">6</option>
+            <option value = "7">7</option>
+            <option value = "8" selected>8</option>
+            <option value = "9">9</option>
+            <option value = "10">10</option>
+        </select>
+    </p> -->
+    <p id = "task_names" style="display:none;"> Enter Task Names below: <br>
+        <textarea id="task_input" name= "task_input"  placeholder="Please enter task names with comma separated values (Refer to example)...Example: Requirement Analysis,DOU,Development,Unit Testing,QA Progression etc..." rows="10" cols="50"></textarea>
+    </p>
+    <p> Select file: <input type="file" name="file" required/> </p>
+
+    <small><b>Currently support file formats are ".xlsx" and ".csv". Please download Template files from here: <a href="Excel_Template.xlsx" target="_blank" download> Excel</a> or <a href="CSV_Template.csv" target="_blank" download> CSV </a> and upload in same format by dumping the relevant US data in the file.</small>
+    <br>
+    <small><u>Note:</u> If any data is missing in any row in the uploading sheet will be considered as "N/A".</small>
+    <p> <input type=submit style="font-size:11pt;color:white;background-color:MediumSeaGreen;border:0px solid #336600;padding:5px" value=Create ></p>
+
+</form>
+</body>
+</html>
