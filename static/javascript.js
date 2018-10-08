@@ -1,4 +1,3 @@
-/*
 $(function (){
       $("#create_task").change(function() {
                 if ($(this).val() == "Yes") {
