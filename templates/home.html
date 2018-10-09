@@ -26,7 +26,7 @@ form {
 </head>
 </style>
 <body>
-<h1> Rally US/Tasks Creaion Automation</h1>
+<h1> Rally US/Tasks Creation Automation</h1>
 <h2> Automate your Project User Story and Respective Tasks Creation by just uploading the data here.</h2>
 <form action="/", method = "POST" enctype="multipart/form-data">
     <p> Enter Rally Username: <br> <input type ="text" name="username" placeholder="abc@yourcompany.com" required/> </p>
@@ -52,10 +52,10 @@ form {
     </p>
     <p> Select file: <input type="file" name="file" required/> </p>
 
-    <small><b>Currently support file formats are ".xlsx" and ".csv". Please download Template files from here: <a href="/static/Excel_Template.xlsx" target="_blank" download> Excel</a> or <a href="/static/CSV_Template.csv" target="_blank" download> CSV </a> and upload in same format by dumping the relevant US data in the file.</small>
+    <small><b>Currently support file formats are ".xlsx" and ".csv". Please download Template files from here: <a href="/static/Excel_Template.xlsx" target="_blank" download> Excel</a> or <a href="/static/CSV_Template.csv" target="_blank" download> CSV </a> and upload with same format and column names by dumping the relevant US data in the file.</small>
     <br>
-    <small><u>Note:</u> If any data is missing in any row in the uploading sheet will be considered as "N/A".</small>
-    <p> <input type=submit style="font-size:11pt;color:white;background-color:MediumSeaGreen;border:0px solid #336600;padding:5px" value=Create ></p>
+    <small><u>Note:</u> If you add extra columns to the template file also, those columns won't be considered. If any data is missing in any row in the uploading sheet will be considered as "N/A".</small>
+    <p> <input type=submit style="font-size:11pt;color:white;background-color:MediumSeaGreen;border:0px solid #336600;padding:5px" value=Create ></p><small>Once Create is clicked, it will be loading, so please wait in same page till you get Success/Failure message.</small>
 
 </form>
 </body>
