@@ -1,4 +1,4 @@
-# rally_automation
+# Rally Automation
 Automating Rally User story card and Tasks creation. In case if you are doing manually, you can use the [tool](https://rallyautomation.herokuapp.com/) .
 
 Download the template files and dump the Story card name and description and tasks in the form, it does automatically for you.
